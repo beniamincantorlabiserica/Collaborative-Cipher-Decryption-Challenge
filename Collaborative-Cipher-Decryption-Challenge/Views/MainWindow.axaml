@@ -1,20 +1,255 @@
-<Window xmlns="https://github.com/avaloniaui"
+<Window x:Class="Collaborative_Cipher_Decryption_Challenge.Views.MainWindow"
+        xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:Collaborative_Cipher_Decryption_Challenge.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Collaborative_Cipher_Decryption_Challenge.Views.MainWindow"
+        xmlns:vm="using:Collaborative_Cipher_Decryption_Challenge.ViewModels"
+        Title="Collaborative_Cipher_Decryption_Challenge"
+        Width="1000"
+        Height="500"
+        d:DesignHeight="500"
+        d:DesignWidth="500"
         x:DataType="vm:MainWindowViewModel"
+        Background="#371f76"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Collaborative_Cipher_Decryption_Challenge">
+        mc:Ignorable="d">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+
+    <Panel Width="1000" Height="500">
+
+        <!--  Styles set for each item  -->
+        <Panel.Styles>
+            <Style Selector="Button.Control">
+                <Setter Property="CornerRadius" Value="50" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="BorderBrush" Value="White" />
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Style>
+            </Style>
+        </Panel.Styles>
+
+
+
+        <TabControl Margin="5">
+
+
+            <TabItem Header="Atbash Cipher">
+                <Grid Margin="5"
+                      ColumnDefinitions="Auto, Auto"
+                      RowDefinitions="Auto, Auto, Auto">
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="10">
+                        Input
+                    </Label>
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="Text you want to encrypt/decrypt" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="10">
+                        Output
+                    </Label>
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="1"
+                               Width="400"
+                               Margin="0,5"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="efewfwfefegeewgqegg" />
+                    <Button Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,5"
+                            Classes="Control">
+                        Cipher
+                    </Button>
+                    <Button Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Classes="Control">
+                        Decipher
+                    </Button>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Caesar Cipher">
+                <Grid Margin="5"
+                      ColumnDefinitions="Auto, Auto"
+                      RowDefinitions="Auto, Auto, Auto, Auto">
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="10">
+                        Input
+                    </Label>
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="Text you want to encrypt/decrypt" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="10">
+                        Shift
+                    </Label>
+                    <TextBox Grid.Row="1"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="The shift you want to use to encrypt/decrypt" />
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="10">
+                        Output
+                    </Label>
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="1"
+                               Width="400"
+                               Margin="0,5"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="efewfwfefegeewgqegg" />
+
+                    <Button Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,5"
+                            Classes="Control">
+                        Cipher
+                    </Button>
+                    <Button Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Classes="Control">
+                        Decipher
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Double Transportation Cipher">
+                <Grid Margin="5"
+                      ColumnDefinitions="Auto, Auto"
+                      RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="10">
+                        Input
+                    </Label>
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="Text you want to encrypt/decrypt" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="10">
+                        First Key
+                    </Label>
+                    <TextBox Grid.Row="1"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="First key used for encrypt/decrypt" />
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="10">
+                        Second Key
+                    </Label>
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="Second key used for encrypt/decrypt" />
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           Margin="10">
+                        Output
+                    </Label>
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="1"
+                               Width="400"
+                               Margin="0,5"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="efewfwfefegeewgqegg" />
+
+                    <Button Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="0,5"
+                            Classes="Control">
+                        Cipher
+                    </Button>
+                    <Button Grid.Row="4"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Classes="Control">
+                        Decipher
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Playfair Cipher">
+                <Grid Margin="5"
+                      ColumnDefinitions="Auto, Auto"
+                      RowDefinitions="Auto, Auto, Auto, Auto">
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="10">
+                        Input
+                    </Label>
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="Text you want to encrypt/decrypt" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="10">
+                        Keyword
+                    </Label>
+                    <TextBox Grid.Row="1"
+                             Grid.Column="1"
+                             Width="400"
+                             Margin="0,5"
+                             Watermark="Keyword used for encrypt/decrypt" />
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="10">
+                        Output
+                    </Label>
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="1"
+                               Width="400"
+                               Margin="0,5"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="efewfwfefegeewgqegg" />
+
+                    <Button Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,5"
+                            Classes="Control">
+                        Cipher
+                    </Button>
+                    <Button Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Classes="Control">
+                        Decipher
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Panel>
 </Window>
