@@ -39,16 +39,16 @@
                 </Style>
             </Style>
         </Panel.Styles>
-
-
-
-        <TabControl Margin="5" SelectedIndex="{Binding CurrentTab}">
+        
+        <TabControl Margin="5" SelectedIndex="{Binding CurrentTab}" HorizontalAlignment="Center">
 
 
             <TabItem Header="Atbash Cipher">
+                <Grid RowDefinitions="*,*">
                 <Grid Margin="5"
                       ColumnDefinitions="Auto, Auto"
-                      RowDefinitions="Auto, Auto, Auto">
+                      RowDefinitions="Auto, Auto, Auto"
+                      Row="0">
                     <Label Grid.Row="0"
                            Grid.Column="0"
                            Margin="10">
@@ -58,7 +58,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="Text you want to encrypt/decrypt" />
+                             Watermark="Text you want to encrypt/decrypt" 
+                             Text="{Binding Input}"/>
                     <Label Grid.Row="1"
                            Grid.Column="0"
                            Margin="10">
@@ -70,27 +71,39 @@
                                Margin="0,5"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
-                               Text="efewfwfefegeewgqegg" />
+                               Text="{Binding Output}" />
                     <Button Grid.Row="2"
                             Grid.Column="0"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Encrypt}">
                         Cipher
                     </Button>
                     <Button Grid.Row="2"
                             Grid.Column="1"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Decrypt}">
                         Decipher
                     </Button>
+                </Grid>
+                    <Grid Row="1">
+                        <TextBlock Text="{Binding Error}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Bottom"
+                                   Margin="20"
+                                   Foreground="MediumAquamarine"/>
+                    </Grid>
                 </Grid>
             </TabItem>
 
 
             <TabItem Header="Caesar Cipher">
+                <Grid RowDefinitions="*,*">
                 <Grid Margin="5"
                       ColumnDefinitions="Auto, Auto"
-                      RowDefinitions="Auto, Auto, Auto, Auto">
+                      RowDefinitions="Auto, Auto, Auto, Auto"
+                      Row="0">
                     <Label Grid.Row="0"
                            Grid.Column="0"
                            Margin="10">
@@ -100,7 +113,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="Text you want to encrypt/decrypt" />
+                             Watermark="Text you want to encrypt/decrypt" 
+                             Text="{Binding Input}"/>
                     <Label Grid.Row="1"
                            Grid.Column="0"
                            Margin="10">
@@ -110,7 +124,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="The shift you want to use to encrypt/decrypt" />
+                             Watermark="The shift you want to use to encrypt/decrypt" 
+                             Text="{Binding Data1}"/>
                     <Label Grid.Row="2"
                            Grid.Column="0"
                            Margin="10">
@@ -122,26 +137,38 @@
                                Margin="0,5"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
-                               Text="efewfwfefegeewgqegg" />
+                               Text="{Binding Output}" />
 
                     <Button Grid.Row="3"
                             Grid.Column="0"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Encrypt}">
                         Cipher
                     </Button>
                     <Button Grid.Row="3"
                             Grid.Column="1"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Decrypt}">
                         Decipher
                     </Button>
                 </Grid>
+                <Grid Row="1">
+                    <TextBlock Text="{Binding Error}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Margin="20"
+                               Foreground="MediumAquamarine"/>
+                </Grid>
+                </Grid>
             </TabItem>
             <TabItem Header="Double Transportation Cipher">
+                <Grid RowDefinitions="*,*">
                 <Grid Margin="5"
                       ColumnDefinitions="Auto, Auto"
-                      RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+                      RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                      Row="0">
                     <Label Grid.Row="0"
                            Grid.Column="0"
                            Margin="10">
@@ -151,7 +178,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="Text you want to encrypt/decrypt" />
+                             Watermark="Text you want to encrypt/decrypt"
+                             Text="{Binding Input}"/>
                     <Label Grid.Row="1"
                            Grid.Column="0"
                            Margin="10">
@@ -161,7 +189,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="First key used for encrypt/decrypt" />
+                             Watermark="First key used for encrypt/decrypt" 
+                             Text="{Binding Data1}"/>
                     <Label Grid.Row="2"
                            Grid.Column="0"
                            Margin="10">
@@ -171,7 +200,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="Second key used for encrypt/decrypt" />
+                             Watermark="Second key used for encrypt/decrypt" 
+                             Text="{Binding Data2}"/>
                     <Label Grid.Row="3"
                            Grid.Column="0"
                            Margin="10">
@@ -183,26 +213,38 @@
                                Margin="0,5"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
-                               Text="efewfwfefegeewgqegg" />
+                               Text="{Binding Output}"  />
 
                     <Button Grid.Row="4"
                             Grid.Column="0"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Encrypt}">
                         Cipher
                     </Button>
                     <Button Grid.Row="4"
                             Grid.Column="1"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Decrypt}">
                         Decipher
                     </Button>
                 </Grid>
+                <Grid Row="1">
+                    <TextBlock Text="{Binding Error}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Margin="20"
+                               Foreground="MediumAquamarine"/>
+                </Grid>
+                </Grid>
             </TabItem>
             <TabItem Header="Playfair Cipher">
+                <Grid RowDefinitions="*,*">
                 <Grid Margin="5"
                       ColumnDefinitions="Auto, Auto"
-                      RowDefinitions="Auto, Auto, Auto, Auto">
+                      RowDefinitions="Auto, Auto, Auto, Auto"
+                      Row="0">
                     <Label Grid.Row="0"
                            Grid.Column="0"
                            Margin="10">
@@ -212,7 +254,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="Text you want to encrypt/decrypt" />
+                             Watermark="Text you want to encrypt/decrypt" 
+                             Text="{Binding Input}"/>
                     <Label Grid.Row="1"
                            Grid.Column="0"
                            Margin="10">
@@ -222,7 +265,8 @@
                              Grid.Column="1"
                              Width="400"
                              Margin="0,5"
-                             Watermark="Keyword used for encrypt/decrypt" />
+                             Watermark="Keyword used for encrypt/decrypt"
+                             Text="{Binding Data1}"/>
                     <Label Grid.Row="2"
                            Grid.Column="0"
                            Margin="10">
@@ -234,13 +278,13 @@
                                Margin="0,5"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
-                               Text="efewfwfefegeewgqegg" />
+                               Text="{Binding Output}" />
 
                     <Button Grid.Row="3"
                             Grid.Column="0"
                             Margin="0,5"
                             Classes="Control"
-                            Command="{Binding     Encrypt}">
+                            Command="{Binding Encrypt}">
                         Cipher
                     </Button>
                     <Button Grid.Row="3"
@@ -250,6 +294,14 @@
                             Command="{Binding Decrypt}">
                         Decipher
                     </Button>
+                </Grid>
+                <Grid Row="1">
+                    <TextBlock Text="{Binding Error}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Margin="20"
+                               Foreground="MediumAquamarine"/>
+                </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
