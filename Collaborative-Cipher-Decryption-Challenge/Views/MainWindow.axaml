@@ -42,7 +42,7 @@
 
 
 
-        <TabControl Margin="5">
+        <TabControl Margin="5" SelectedIndex="{Binding CurrentTab}">
 
 
             <TabItem Header="Atbash Cipher">
@@ -239,13 +239,15 @@
                     <Button Grid.Row="3"
                             Grid.Column="0"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding     Encrypt}">
                         Cipher
                     </Button>
                     <Button Grid.Row="3"
                             Grid.Column="1"
                             Margin="0,5"
-                            Classes="Control">
+                            Classes="Control"
+                            Command="{Binding Decrypt}">
                         Decipher
                     </Button>
                 </Grid>

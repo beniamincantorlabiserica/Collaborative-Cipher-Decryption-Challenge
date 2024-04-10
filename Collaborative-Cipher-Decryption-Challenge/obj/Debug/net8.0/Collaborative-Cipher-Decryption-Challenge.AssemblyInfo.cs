@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Collaborative-Cipher-Decryption-Challenge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5badc4cbf8431c76b7e0a7aba2218ad7e12dc43d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cc535015e435f3e24b8b7cb1e5459e422ec8cad")]
 [assembly: System.Reflection.AssemblyProductAttribute("Collaborative-Cipher-Decryption-Challenge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Collaborative-Cipher-Decryption-Challenge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
