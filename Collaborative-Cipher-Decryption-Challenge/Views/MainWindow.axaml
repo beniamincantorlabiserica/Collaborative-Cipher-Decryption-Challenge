@@ -36,21 +36,23 @@
                 <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="Width" Value="100"/>
+                <Setter Property="Foreground" Value="White"/>
             </Style>
             
             <Style Selector="Label.DefaultLabel">
                 <Setter Property="Width" Value="100"/>
+                <Setter Property="Foreground" Value="White"/>
             </Style>
         </Panel.Styles>
         
        <TabControl Margin="5" SelectedIndex="{Binding CurrentTab}" HorizontalAlignment="Center">
-    <TabItem Header="Atbash Cipher">
+    <TabItem Header="Atbash Cipher" Foreground="White">
         <Grid RowDefinitions="*,*">
             <Grid Margin="5" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto" Row="0">
                 <Label Grid.Row="0" Grid.Column="0" Margin="10" Classes="DefaultLabel">Input</Label>
                 <TextBox Grid.Row="0" Grid.Column="1" Width="400" Margin="0,5" Watermark="Text you want to encrypt/decrypt" Text="{Binding Input}"/>
                 <Label Grid.Row="1" Grid.Column="0" Margin="10" Classes="DefaultLabel">Output</Label>
-                <TextBlock Grid.Row="1" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}" Foreground="White" />
                 <Button Grid.Row="2" Grid.Column="0" Margin="0,5" Classes="Control" Command="{Binding Encrypt}">Cipher</Button>
                 <Button Grid.Row="2" Grid.Column="1" Margin="0,5" Classes="Control" Command="{Binding Decrypt}">Decipher</Button>
             </Grid>
@@ -59,7 +61,7 @@
             </Grid>
         </Grid>
     </TabItem>
-    <TabItem Header="Caesar Cipher">
+    <TabItem Header="Caesar Cipher" Foreground="White">
         <Grid RowDefinitions="*,*">
             <Grid Margin="5" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto, Auto" Row="0">
                 <Label Grid.Row="0" Grid.Column="0" Margin="10" Classes="DefaultLabel">Input</Label>
@@ -67,7 +69,7 @@
                 <Label Grid.Row="1" Grid.Column="0" Margin="10" Classes="DefaultLabel">Shift</Label>
                 <TextBox Grid.Row="1" Grid.Column="1" Width="400" Margin="0,5" Watermark="The shift you want to use to encrypt/decrypt" Text="{Binding Data1}"/>
                 <Label Grid.Row="2" Grid.Column="0" Margin="10" Classes="DefaultLabel">Output</Label>
-                <TextBlock Grid.Row="2" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}" Foreground="White" />
                 <Button Grid.Row="3" Grid.Column="0" Margin="0,5" Classes="Control" Command="{Binding Encrypt}">Cipher</Button>
                 <Button Grid.Row="3" Grid.Column="1" Margin="0,5" Classes="Control" Command="{Binding Decrypt}">Decipher</Button>
             </Grid>
@@ -76,7 +78,7 @@
             </Grid>
         </Grid>
     </TabItem>
-    <TabItem Header="Double Transportation Cipher">
+    <TabItem Header="Double Transportation Cipher" Foreground="White">
         <Grid RowDefinitions="*,*">
             <Grid Margin="5" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto, Auto, Auto" Row="0">
                 <Label Grid.Row="0" Grid.Column="0" Margin="10" Classes="DefaultLabel">Input</Label>
@@ -86,7 +88,7 @@
                 <Label Grid.Row="2" Grid.Column="0" Margin="10" Classes="DefaultLabel">Second Key</Label>
                 <TextBox Grid.Row="2" Grid.Column="1" Width="400" Margin="0,5" Watermark="Second key used for encrypt/decrypt" Text="{Binding Data2}"/>
                 <Label Grid.Row="3" Grid.Column="0" Margin="10" Classes="DefaultLabel">Output</Label>
-                <TextBlock Grid.Row="3" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}"  Foreground="White"/>
                 <Button Grid.Row="4" Grid.Column="0" Margin="0,5" Classes="Control" Command="{Binding Encrypt}">Cipher</Button>
                 <Button Grid.Row="4" Grid.Column="1" Margin="0,5" Classes="Control" Command="{Binding Decrypt}">Decipher</Button>
             </Grid>
@@ -95,7 +97,7 @@
             </Grid>
         </Grid>
     </TabItem>
-    <TabItem Header="Playfair Cipher">
+    <TabItem Header="Playfair Cipher" Foreground="White">
         <Grid RowDefinitions="*,*">
             <Grid Margin="5" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto, Auto" Row="0">
                 <Label Grid.Row="0" Grid.Column="0" Margin="10" Classes="DefaultLabel">Input</Label>
@@ -103,7 +105,7 @@
                 <Label Grid.Row="1" Grid.Column="0" Margin="10" Classes="DefaultLabel">Keyword</Label>
                 <TextBox Grid.Row="1" Grid.Column="1" Width="400" Margin="0,5" Watermark="Keyword used for encrypt/decrypt" Text="{Binding Data1}"/>
                 <Label Grid.Row="2" Grid.Column="0" Margin="10" Classes="DefaultLabel">Output</Label>
-                <TextBlock Grid.Row="2" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Width="400" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Output}"  Foreground="White"/>
                 <Button Grid.Row="3" Grid.Column="0" Margin="0,5" Classes="Control" Command="{Binding Encrypt}">Cipher</Button>
                 <Button Grid.Row="3" Grid.Column="1" Margin="0,5" Classes="Control" Command="{Binding Decrypt}">Decipher</Button>
             </Grid>
