@@ -28,7 +28,7 @@ public class CaesarCipher : ICipher
     } 
 
     // Overall I think a better bethod than the previous one, WIP    
-    static string Encrypt(List<string> args)
+    public string Encrypt(List<string> args)
     {
 
         char[] buffer = _plaintext.ToCharArray();
@@ -54,7 +54,7 @@ public class CaesarCipher : ICipher
         return new string(buffer);
     }
 
-    static string Decrypt(List<string> args)
+    public string Decrypt(List<string> args)
     {
 
         char[] buffer = _plaintext.ToCharArray();
