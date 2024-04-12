@@ -37,7 +37,7 @@ public class CaesarCipher : ICipher
         {
             Console.WriteLine($"Int32.TryParse could not parse '{_shift}' to an int.");
         }
-        // Output: Int32.TryParse could not parse 'abc' to an int.
+
         char[] buffer = _plaintext.ToCharArray();
         for (int i = 0; i < buffer.Length; i++)
         {
@@ -71,7 +71,7 @@ public class CaesarCipher : ICipher
         {
             Console.WriteLine($"Int32.TryParse could not parse '{_shift}' to an int.");
         }
-        // Output: Int32.TryParse could not parse 'abc' to an int.
+
         char[] buffer = _plaintext.ToCharArray();
         for (int i = 0; i < buffer.Length; i++)
         {
@@ -95,42 +95,4 @@ public class CaesarCipher : ICipher
         return new string(buffer);
     }
 
-    /*public string Encrypt(List<string> args)
-    {
-        string encryptedText = "";
-        foreach (char c in _plaintext)
-        {
-            if (char.IsLetter(c))
-            {
-                char lowerC = char.ToLower(c);
-                char shifted = (char)(((lowerC + _shift - 'a') % 26) + "a");
-                encryptedText += shifted;
-            }
-            else
-            {
-                encryptedText += c;
-            }   
-        }
-        
-        return encryptedText;
-    }
-
-    public string Decrypt(List<string> args)
-    {
-        string decryptedText = "";
-
-        foreach(char c in _plaintext)
-        {
-            if(char.IsLetter(c))
-            {
-                char lowerC = char.ToLower(c);
-                char shifted = (char)(((lowerC - _shift - 'a' + 26) % 26) + "a");
-                decryptedText += shifted;
-            }
-            else
-            {
-                decryptedText += c;
-            }
-        }
-    }*/
 }
