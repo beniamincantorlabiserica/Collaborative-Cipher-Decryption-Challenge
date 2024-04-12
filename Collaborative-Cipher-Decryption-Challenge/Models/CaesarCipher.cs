@@ -7,14 +7,13 @@ using System;
 using System.Text;
 using System.Linq;
 using System.Collections.Generic;
-using DynamicData;
+
 
 public class CaesarCipher : ICipher
 {
 
     private string _plaintext;
     private string _shift;
-    private string shifted;
 
     public CaesarCipher()
     {
@@ -30,14 +29,22 @@ public class CaesarCipher : ICipher
     // Overall I think a better bethod than the previous one, WIP    
     public string Encrypt(List<string> args)
     {
-
+        if (Int32.TryParse(_shift, out int buffer_shift))
+        {
+            Console.WriteLine(buffer_shift);
+        }
+        else
+        {
+            Console.WriteLine($"Int32.TryParse could not parse '{_shift}' to an int.");
+        }
+        // Output: Int32.TryParse could not parse 'abc' to an int.
         char[] buffer = _plaintext.ToCharArray();
         for (int i = 0; i < buffer.Length; i++)
         {
             // Letter.
             char letter = buffer[i];
             // Add shift to all.
-            letter = (char)(letter + _shift);
+            letter = (char)(letter + buffer_shift);
             // Subtract 26 if past z.
             // ... Add 26 if below a.
             if (letter > 'z')
@@ -56,14 +63,22 @@ public class CaesarCipher : ICipher
 
     public string Decrypt(List<string> args)
     {
-
+        if (Int32.TryParse(_shift, out int buffer_shift))
+        {
+            Console.WriteLine(buffer_shift);
+        }
+        else
+        {
+            Console.WriteLine($"Int32.TryParse could not parse '{_shift}' to an int.");
+        }
+        // Output: Int32.TryParse could not parse 'abc' to an int.
         char[] buffer = _plaintext.ToCharArray();
         for (int i = 0; i < buffer.Length; i++)
         {
             // Letter.
             char letter = buffer[i];
             // Remove shift from all.
-            letter = (char)(letter - _shift);
+            letter = (char)(letter - buffer_shift);
             // Subtract 26 if past z.
             // ... Add 26 if below a.
             if (letter > 'z')
