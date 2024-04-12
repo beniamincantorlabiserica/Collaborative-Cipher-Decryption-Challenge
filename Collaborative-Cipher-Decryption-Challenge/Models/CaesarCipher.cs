@@ -26,9 +26,61 @@ public class CaesarCipher : ICipher
         _plaintext = args[0];
         _shift = args[1];
     } 
-    
 
-    public string Encrypt(List<string> args)
+    // Overall I think a better bethod than the previous one, WIP    
+    static string Encrypt(List<string> args)
+    {
+
+        char[] buffer = _plaintext.ToCharArray();
+        for (int i = 0; i < buffer.Length; i++)
+        {
+            // Letter.
+            char letter = buffer[i];
+            // Add shift to all.
+            letter = (char)(letter + _shift);
+            // Subtract 26 if past z.
+            // ... Add 26 if below a.
+            if (letter > 'z')
+            {
+                letter = (char)(letter - 26);
+            }
+            else if (letter < 'a')
+            {
+                letter = (char)(letter + 26);
+            }
+            // Store.
+            buffer[i] = letter;
+        }
+        return new string(buffer);
+    }
+
+    static string Decrypt(List<string> args)
+    {
+
+        char[] buffer = _plaintext.ToCharArray();
+        for (int i = 0; i < buffer.Length; i++)
+        {
+            // Letter.
+            char letter = buffer[i];
+            // Remove shift from all.
+            letter = (char)(letter - _shift);
+            // Subtract 26 if past z.
+            // ... Add 26 if below a.
+            if (letter > 'z')
+            {
+                letter = (char)(letter - 26);
+            }
+            else if (letter < 'a')
+            {
+                letter = (char)(letter + 26);
+            }
+            // Store.
+            buffer[i] = letter;
+        }
+        return new string(buffer);
+    }
+
+    /*public string Encrypt(List<string> args)
     {
         string encryptedText = "";
         foreach (char c in _plaintext)
@@ -65,5 +117,5 @@ public class CaesarCipher : ICipher
                 decryptedText += c;
             }
         }
-    }
+    }*/
 }
