@@ -15,17 +15,6 @@ public class CaesarCipher : ICipher
     private string _plaintext;
     private string _shift;
 
-    public CaesarCipher()
-    {
-
-    }
-
-    private void SetParamenters(List<string> args)
-    {
-        _plaintext = args[0];
-        _shift = args[1];
-    } 
-
     // Overall I think a better bethod than the previous one, WIP    
     public string Encrypt(List<string> args)
     {
